@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   Sistema de Color - Portfolio
+   ============================================ */
+
+:root {
+  /* Brand */
+  --bg-app: #fffef6;
+  --primary: #0550b8;
+  --dark: #1a355c;
+
+  /* Text */
+  --text-main: #1a355c;
+  --text-muted: rgba(26, 53, 92, 0.7);
+  --text-disabled: rgba(26, 53, 92, 0.4);
+
+  /* UI */
+  --card-bg: #ffffff;
+  --border-default: rgba(26, 53, 92, 0.25);
+
+  /* Actions */
+  --primary-hover: #04449c;
+  --primary-active: #03357a;
+
+  /* States (no branding) */
+  --success: #16a34a;
+  --warning: #facc15;
+  --danger: #dc2626;
+}
+
+@layer base {
+  body {
+    @apply bg-app-bg text-dark;
+  }
+}
+
+@layer components {
+  /* Card Component */
+  .card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 1.25rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+  }
+
+  /* Botón Primario */
+  .btn-primary {
+    background: var(--primary);
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 0.6rem 1.1rem;
+    border: none;
+    font-weight: 500;
+    transition: background 0.2s ease;
+    cursor: pointer;
+  }
+
+  .btn-primary:hover {
+    background: var(--primary-hover);
+  }
+
+  .btn-primary:active {
+    background: var(--primary-active);
+  }
+
+  .btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  /* Botón Secundario */
+  .btn-secondary {
+    background: transparent;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    border-radius: 10px;
+    padding: 0.6rem 1.1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+
+  .btn-secondary:hover {
+    background: rgba(5, 80, 184, 0.08);
+  }
+
+  /* Input Base */
+  .input {
+    width: 100%;
+    border: 1px solid var(--border-default);
+    padding: 0.55rem;
+    border-radius: 8px;
+    background: white;
+    color: var(--text-main);
+    transition: border-color 0.2s ease;
+  }
+
+  .input:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(5, 80, 184, 0.1);
+  }
+
+  .input:disabled {
+    background: rgba(26, 53, 92, 0.05);
+    color: var(--text-disabled);
+    cursor: not-allowed;
+  }
+
+  /* Sidebar */
+  .sidebar {
+    background: var(--dark);
+    color: #ffffff;
+  }
+
+  .sidebar a {
+    color: rgba(255, 255, 255, 0.75);
+    transition: color 0.2s ease;
+  }
+
+  .sidebar a:hover {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .sidebar a.active {
+    color: #ffffff;
+    font-weight: 500;
+  }
+
+  /* Links */
+  .link {
+    color: var(--primary);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+  }
+
+  .link:hover {
+    opacity: 0.8;
+  }
+
+  /* Text Utilities */
+  .text-muted {
+    color: var(--text-muted);
+  }
+
+  .text-disabled {
+    color: var(--text-disabled);
+  }
+}
